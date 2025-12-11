@@ -6,6 +6,7 @@
   import { generateQuizQuestion, checkAnswer } from './utils/quiz-logic';
   import { language, selectedSet, availableSets, klassetrinn } from './stores/settings';
   import { getTranslations } from './i18n/translations';
+  import { RARE_CARDS_HP_THRESHOLD } from './config/game-config';
   import QuizView from './components/QuizView.svelte';
   import ResultView from './components/ResultView.svelte';
   import CollectionView from './components/CollectionView.svelte';
@@ -95,12 +96,18 @@
       const rareCardIds = new Set(sortedCards.slice(0, 5).map(c => c.id));
 
       const collectedCardIds = new Set(collection.cards.map(c => c.id));
-      const availableCards = allCards.filter(card =>
+      const hasReachedHpThreshold = collection.stats.totalHpDefeated >= RARE_CARDS_HP_THRESHOLD;
+
+      let availableCards = allCards.filter(card =>
         !collectedCardIds.has(card.id) && !rareCardIds.has(card.id)
       );
 
       if (availableCards.length === 0) {
-        throw new Error('Congratulations! You have collected all cards from this set!');
+        if (hasReachedHpThreshold) {
+          throw new Error('Congratulations! You have collected all cards from this set!');
+        } else {
+          availableCards = allCards.filter(card => !rareCardIds.has(card.id));
+        }
       }
 
       const randomCard = getRandomCard(availableCards);
@@ -141,7 +148,7 @@
       return;
     }
 
-    if (collection.stats.totalHpDefeated >= 16000) {
+    if (collection.stats.totalHpDefeated >= RARE_CARDS_HP_THRESHOLD) {
       if (allCards.length === 0) {
         allCards = await getAllCardsFromSet(currentSetId);
       }
@@ -330,8 +337,8 @@
     <div class="dialog language-dialog">
       {#if !showKlassetrinnStep}
         <h2>Hello!</h2>
-        <p>Dette er et mattespill for barn i 1-7 trinn, og her skal du samle på pokémon kort. Du kan vinne de supersjeldene gull kortene ved å slå kort med tilsammen 16000 HP. </p>
-        <p>Solve math problems collect get cards. Beat 16000 HP in total to get super rare cards! </p>
+        <p>Dette er et mattespill for barn i 1-7 trinn, og her skal du samle på pokémon kort. Du kan vinne de supersjeldene gull kortene ved å slå kort med tilsammen {RARE_CARDS_HP_THRESHOLD.toLocaleString()} HP. </p>
+        <p>Solve math problems collect get cards. Beat {RARE_CARDS_HP_THRESHOLD.toLocaleString()} HP in total to get super rare cards! </p>
         <div class="language-buttons">
           <button class="language-btn" on:click={() => handleLanguageSelect('en')}>
             <span class="flag">🇬🇧</span>

@@ -6,6 +6,7 @@
   import { clearCollection } from '../services/local-storage';
   import { selectedSet, klassetrinn, availableSets } from '../stores/settings';
   import { getAllCardsFromSet } from '../services/tcgdex-api';
+  import { RARE_CARDS_HP_THRESHOLD } from '../config/game-config';
 
   export let collection: Collection;
   export let t: Translations;
@@ -120,9 +121,9 @@
     ? Math.round((collection.stats.correctAnswers / collection.stats.totalQuestions) * 100)
     : 0;
 
-  $: hpToUnlock = 16000 - (collection.stats.totalHpDefeated || 0);
+  $: hpToUnlock = RARE_CARDS_HP_THRESHOLD - (collection.stats.totalHpDefeated || 0);
   $: isUnlocked = (collection.unlockedRareSets && collection.unlockedRareSets[viewSet]) || false;
-  $: progressPercent = Math.min((collection.stats.totalHpDefeated / 16000) * 100, 100);
+  $: progressPercent = Math.min((collection.stats.totalHpDefeated / RARE_CARDS_HP_THRESHOLD) * 100, 100);
 
   $: filteredCards = collection.cards.filter(card => card.id.startsWith(viewSet + '-'));
   $: collectedCount = filteredCards.length;

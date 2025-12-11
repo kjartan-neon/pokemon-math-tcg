@@ -1,0 +1,1 @@
+export const RARE_CARDS_HP_THRESHOLD = 10000;
