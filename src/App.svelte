@@ -279,7 +279,10 @@
 <div class="app">
   <header class="app-header" style="background-image: url({headerBackground}); background-size: cover; background-position: top center; background-repeat: no-repeat;">
     <div class="header-content">
-      <h1 class="app-title">{t.appTitle}</h1>
+      <div>
+        <h1 class="app-title">{t.appTitle}</h1>
+        <p class="app-tagline">{t.appTagline}</p>
+      </div>
       <nav>
       <button
         class="nav-btn"
@@ -407,6 +410,12 @@
     gap: var(--spacing-6);
   }
 
+  .header-content > div:first-child {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
   .app-title {
     font-family: var(--font-retro);
     font-size: var(--font-size-l);
@@ -418,6 +427,16 @@
     text-shadow: 3px 3px 0px rgba(0, 0, 0, 0.3);
     letter-spacing: 0.5px;
     flex-shrink: 0;
+  }
+
+  .app-tagline {
+    font-family: var(--font-retro);
+    font-size: var(--font-size-sm);
+    color: rgba(255, 255, 255, 0.9);
+    margin: var(--spacing-2) 0 0 0;
+    text-align: left;
+    text-shadow: 2px 2px 0px rgba(0, 0, 0, 0.3);
+    letter-spacing: 0.5px;
   }
 
 

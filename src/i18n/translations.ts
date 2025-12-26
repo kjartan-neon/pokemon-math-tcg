@@ -2,6 +2,7 @@ export type Language = 'en' | 'no';
 
 export interface Translations {
   appTitle: string;
+  appTagline: string;
   quizTitle: string;
   playQuiz: string;
   myCollection: string;
@@ -49,6 +50,7 @@ export interface Translations {
 export const translations: Record<Language, Translations> = {
   en: {
     appTitle: 'cardCrun.ch',
+    appTagline: 'Crunch Numbers. Collect Cards.',
     quizTitle: 'TCG Math Challenge',
     playQuiz: 'Play Quiz',
     myCollection: 'My Collection',
@@ -94,6 +96,7 @@ export const translations: Record<Language, Translations> = {
   },
   no: {
     appTitle: 'cardCrun.ch',
+    appTagline: 'Crunch Numbers. Collect Cards.',
     quizTitle: 'TCG Matte Utfordring',
     playQuiz: 'Spill Quiz',
     myCollection: 'Min Samling',
