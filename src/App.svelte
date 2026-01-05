@@ -340,8 +340,8 @@
     <div class="dialog language-dialog">
       {#if !showKlassetrinnStep}
         <h2>Hello!</h2>
-        <p>Dette er et mattespill for barn i 1-7 trinn, og her skal du samle på pokémon kort. Du kan vinne de supersjeldene gull kortene ved å slå kort med tilsammen {RARE_CARDS_HP_THRESHOLD.toLocaleString()} HP. </p>
-        <p>Solve math problems collect get cards. Beat {RARE_CARDS_HP_THRESHOLD.toLocaleString()} HP in total to get super rare cards! </p>
+        <p class="intro-text">Mattespill for barn i 1-7 trinn. Samle pokémon kort og vinn gull kortene ved å slå kort med {RARE_CARDS_HP_THRESHOLD.toLocaleString()} HP.</p>
+        <p class="intro-text">Math game for grades 1-7. Collect pokémon cards and win gold cards by beating {RARE_CARDS_HP_THRESHOLD.toLocaleString()} HP.</p>
         <div class="language-buttons">
           <button class="language-btn" on:click={() => handleLanguageSelect('en')}>
             <span class="flag">🇬🇧</span>
@@ -352,10 +352,10 @@
             <span>Norsk</span>
           </button>
         </div>
-        <p> Laget av / Made by Sigmund (10) & Kjartan</p>
+        <p class="credits">Laget av / Made by Sigmund (10) & Kjartan</p>
       {:else}
         <h2>{selectedLanguageTemp === 'en' ? 'Choose Grade Level' : 'Velg Klassetrinn'}</h2>
-        <p>{selectedLanguageTemp === 'en' ? 'Select the appropriate difficulty level. You can change this anytime in My Collection.' : 'Velg passende vanskelighetsnivå. Du kan endre dette når som helst i Min samling.'}</p>
+        <p class="intro-text">{selectedLanguageTemp === 'en' ? 'Select difficulty level. You can change this anytime in My Collection.' : 'Velg vanskelighetsnivå. Du kan endre dette i Min samling.'}</p>
         <div class="klassetrinn-buttons">
           <button class="klassetrinn-btn" on:click={() => handleKlassetrinnSelect(1)}>
             <span class="grade-number">1</span>
@@ -507,9 +507,11 @@
   .dialog {
     background: white;
     border-radius: var(--border-radius-2xl);
-    padding: var(--spacing-8);
-    max-width: 500px;
+    padding: var(--spacing-5);
+    max-width: 420px;
     width: 90%;
+    max-height: 90vh;
+    overflow-y: auto;
     box-shadow: var(--shadow-xl);
     animation: slideUp var(--transition-normal) ease-out;
   }
@@ -526,7 +528,7 @@
   }
 
   .language-dialog h2 {
-    font-size: var(--font-size-3xl);
+    font-size: var(--font-size-2xl);
     font-weight: var(--font-weight-bold);
     background: linear-gradient(135deg, #FF6B6B 0%, #FFD93D 25%, #6BCF7F 50%, #4D96FF 75%, #9D50BB 100%);
     -webkit-background-clip: text;
@@ -537,64 +539,79 @@
   }
 
   .language-dialog p {
-    font-size: var(--font-size-base);
+    font-size: var(--font-size-sm);
     color: var(--color-neutral-600);
     text-align: center;
-    margin: 0 0 var(--spacing-8) 0;
-    line-height: var(--line-height-relaxed);
+    margin: 0 0 var(--spacing-4) 0;
+    line-height: var(--line-height-normal);
+  }
+
+  .intro-text {
+    margin-bottom: var(--spacing-3) !important;
+  }
+
+  .credits {
+    font-size: var(--font-size-xs) !important;
+    margin-top: var(--spacing-4) !important;
+    margin-bottom: 0 !important;
+    opacity: 0.7;
   }
 
   .language-buttons {
     display: flex;
-    gap: var(--spacing-4);
+    flex-direction: column;
+    gap: var(--spacing-3);
     justify-content: center;
+    margin: var(--spacing-4) 0;
   }
 
   .language-btn {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
     align-items: center;
+    justify-content: center;
     gap: var(--spacing-3);
-    padding: var(--spacing-6);
+    padding: var(--spacing-3) var(--spacing-4);
     background: linear-gradient(135deg, rgba(255, 255, 255, 0.9) 0%, rgba(255, 255, 255, 0.7) 100%);
     border: 2px solid rgba(255, 107, 107, 0.3);
-    border-radius: var(--border-radius-xl);
+    border-radius: var(--border-radius-lg);
     cursor: pointer;
     transition: all var(--transition-fast);
-    font-size: var(--font-size-lg);
+    font-size: var(--font-size-base);
     font-weight: var(--font-weight-semibold);
     color: var(--color-neutral-900);
-    min-width: 140px;
+    width: 100%;
+    max-width: 240px;
+    margin: 0 auto;
   }
 
   .language-btn:hover {
-    transform: translateY(-4px) scale(1.05);
-    box-shadow: 0 8px 24px rgba(255, 107, 107, 0.4);
+    transform: translateY(-2px);
+    box-shadow: 0 6px 16px rgba(255, 107, 107, 0.4);
     background: linear-gradient(135deg, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 0.9) 100%);
-    border: 2px solid;
-    border-image: linear-gradient(135deg, #FF6B6B, #FFD93D, #6BCF7F, #4D96FF, #9D50BB) 1;
+    border: 2px solid rgba(255, 107, 107, 0.5);
   }
 
   .language-btn .flag {
-    font-size: 3rem;
+    font-size: 1.5rem;
   }
 
   .klassetrinn-buttons {
     display: flex;
     flex-direction: column;
-    gap: var(--spacing-3);
-    max-width: 400px;
-    margin: 0 auto;
+    gap: var(--spacing-2);
+    max-width: 360px;
+    margin: var(--spacing-4) auto 0;
   }
 
   .klassetrinn-btn {
     display: flex;
     align-items: center;
-    gap: var(--spacing-4);
-    padding: var(--spacing-4) var(--spacing-5);
+    gap: var(--spacing-3);
+    padding: var(--spacing-3) var(--spacing-4);
     background: linear-gradient(135deg, rgba(255, 255, 255, 0.9) 0%, rgba(255, 255, 255, 0.7) 100%);
     border: 2px solid rgba(255, 107, 107, 0.3);
-    border-radius: var(--border-radius-xl);
+    border-radius: var(--border-radius-lg);
     cursor: pointer;
     transition: all var(--transition-fast);
     color: var(--color-neutral-900);
@@ -603,26 +620,25 @@
 
   .klassetrinn-btn:hover {
     transform: translateY(-2px);
-    box-shadow: 0 8px 24px rgba(255, 107, 107, 0.4);
+    box-shadow: 0 6px 16px rgba(255, 107, 107, 0.4);
     background: linear-gradient(135deg, rgba(255, 255, 255, 1) 0%, rgba(255, 255, 255, 0.9) 100%);
-    border: 2px solid;
-    border-image: linear-gradient(135deg, #FF6B6B, #FFD93D, #6BCF7F, #4D96FF, #9D50BB) 1;
+    border: 2px solid rgba(255, 107, 107, 0.5);
   }
 
   .grade-number {
-    font-size: var(--font-size-3xl);
+    font-size: var(--font-size-2xl);
     font-weight: var(--font-weight-bold);
     background: linear-gradient(135deg, #FF6B6B 0%, #FFD93D 25%, #6BCF7F 50%, #4D96FF 75%, #9D50BB 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
-    min-width: 50px;
+    min-width: 40px;
   }
 
   .grade-description {
-    font-size: var(--font-size-sm);
+    font-size: var(--font-size-xs);
     color: var(--color-neutral-600);
-    line-height: var(--line-height-relaxed);
+    line-height: var(--line-height-normal);
   }
 
   nav {
