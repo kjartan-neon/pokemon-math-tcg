@@ -352,7 +352,7 @@
             <span>Norsk</span>
           </button>
         </div>
-        <p class="credits">Laget av / Made by Sigmund (10) & Kjartan</p>
+        <p class="credits">Laget av / Made by Sigmund (11) & Kjartan</p>
       {:else}
         <h2>{selectedLanguageTemp === 'en' ? 'Choose Grade Level' : 'Velg Klassetrinn'}</h2>
         <p class="intro-text">{selectedLanguageTemp === 'en' ? 'Select difficulty level. You can change this anytime in My Collection.' : 'Velg vanskelighetsnivå. Du kan endre dette i Min samling.'}</p>
