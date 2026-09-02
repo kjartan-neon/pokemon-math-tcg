@@ -96,8 +96,8 @@ export const translations: Record<Language, Translations> = {
   },
   no: {
     appTitle: 'Duskball',
-    appTagline: 'Mestre Matte. Samle Kort.',
-    quizTitle: 'TCG Matte Utfordring',
+    appTagline: 'Lær Matte. Samle Kort.',
+    quizTitle: 'TCG Matteutfordringer',
     playQuiz: 'Spill Quiz',
     myCollection: 'Min Samling',
     selectSet: 'Velg Sett',
