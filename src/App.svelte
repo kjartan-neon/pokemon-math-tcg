@@ -363,23 +363,38 @@
         <div class="klassetrinn-buttons">
           <button class="klassetrinn-btn" on:click={() => handleKlassetrinnSelect(1)}>
             <span class="grade-number">1</span>
-            <span class="grade-description">{selectedLanguageTemp === 'en' ? 'Simple addition (5 + 3)' : 'Enkel addisjon (5 + 3)'}</span>
+            <span class="grade-description">
+              <span class="grade-label">{selectedLanguageTemp === 'en' ? 'Simple addition' : 'Enkel addisjon'}</span>
+              <span class="grade-example">{selectedLanguageTemp === 'en' ? 'e.g. 5 + 3, 7 + 2' : 'f.eks. 5 + 3, 7 + 2'}</span>
+            </span>
           </button>
           <button class="klassetrinn-btn" on:click={() => handleKlassetrinnSelect(2)}>
             <span class="grade-number">2</span>
-            <span class="grade-description">{selectedLanguageTemp === 'en' ? 'Addition & subtraction' : 'Addisjon og subtraksjon'}</span>
+            <span class="grade-description">
+              <span class="grade-label">{selectedLanguageTemp === 'en' ? 'Addition & subtraction' : 'Addisjon og subtraksjon'}</span>
+              <span class="grade-example">{selectedLanguageTemp === 'en' ? 'e.g. 23 + 15, 48 − 12' : 'f.eks. 23 + 15, 48 − 12'}</span>
+            </span>
           </button>
           <button class="klassetrinn-btn" on:click={() => handleKlassetrinnSelect(3)}>
             <span class="grade-number">3</span>
-            <span class="grade-description">{selectedLanguageTemp === 'en' ? 'Addition & subtraction' : 'Addisjon og subtraksjon'}</span>
+            <span class="grade-description">
+              <span class="grade-label">{selectedLanguageTemp === 'en' ? 'Addition & subtraction' : 'Addisjon og subtraksjon'}</span>
+              <span class="grade-example">{selectedLanguageTemp === 'en' ? 'e.g. 47 + 29, 55 − 18' : 'f.eks. 47 + 29, 55 − 18'}</span>
+            </span>
           </button>
           <button class="klassetrinn-btn" on:click={() => handleKlassetrinnSelect(4)}>
             <span class="grade-number">4</span>
-            <span class="grade-description">{selectedLanguageTemp === 'en' ? 'With Pokemon challenges' : 'Med Pokemon utfordringer'}</span>
+            <span class="grade-description">
+              <span class="grade-label">{selectedLanguageTemp === 'en' ? 'With Pokemon challenges' : 'Med Pokemon utfordringer'}</span>
+              <span class="grade-example">{selectedLanguageTemp === 'en' ? 'e.g. Deal 30 damage — how many turns to KO 90 HP?' : 'f.eks. Gjør 30 skade — hvor mange runder for å slå 90 HP?'}</span>
+            </span>
           </button>
           <button class="klassetrinn-btn" on:click={() => handleKlassetrinnSelect(5)}>
             <span class="grade-number">5</span>
-            <span class="grade-description">{selectedLanguageTemp === 'en' ? 'With Pokemon challenges' : 'Med Pokemon utfordringer'}</span>
+            <span class="grade-description">
+              <span class="grade-label">{selectedLanguageTemp === 'en' ? 'With Pokemon challenges' : 'Med Pokemon utfordringer'}</span>
+              <span class="grade-example">{selectedLanguageTemp === 'en' ? 'e.g. Deal 20 damage — how many turns to KO 120 HP?' : 'f.eks. Gjør 20 skade — hvor mange runder for å slå 120 HP?'}</span>
+            </span>
           </button>
         </div>
       {/if}
@@ -662,6 +677,19 @@
     font-size: var(--font-size-xs);
     color: var(--color-neutral-600);
     line-height: var(--line-height-normal);
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+  }
+
+  .grade-label {
+    font-weight: var(--font-weight-semibold);
+  }
+
+  .grade-example {
+    font-size: var(--font-size-xs);
+    color: var(--color-neutral-500);
+    font-style: italic;
   }
 
   nav {
