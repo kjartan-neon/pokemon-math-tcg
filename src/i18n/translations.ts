@@ -50,7 +50,7 @@ export interface Translations {
 export const translations: Record<Language, Translations> = {
   en: {
     appTitle: 'Duskball',
-    appTagline: 'Crunch Numbers. Collect Cards.',
+    appTagline: 'Master Math. Collect Cards.',
     quizTitle: 'TCG Math Challenge',
     playQuiz: 'Play Quiz',
     myCollection: 'My Collection',
@@ -96,7 +96,7 @@ export const translations: Record<Language, Translations> = {
   },
   no: {
     appTitle: 'Duskball',
-    appTagline: 'Crunch Numbers. Collect Cards.',
+    appTagline: 'Mestre Matte. Samle Kort.',
     quizTitle: 'TCG Matte Utfordring',
     playQuiz: 'Spill Quiz',
     myCollection: 'Min Samling',
