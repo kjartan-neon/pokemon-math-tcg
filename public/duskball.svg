@@ -1,0 +1,37 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" width="64" height="64">
+  <defs>
+    <linearGradient id="topHalf" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#1a1a4e"/>
+      <stop offset="100%" stop-color="#2d2d6e"/>
+    </linearGradient>
+    <linearGradient id="bottomHalf" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" stop-color="#f5f5f5"/>
+      <stop offset="100%" stop-color="#e0e0e0"/>
+    </linearGradient>
+    <radialGradient id="centerBtn" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#ffffff"/>
+      <stop offset="70%" stop-color="#f0f0f0"/>
+      <stop offset="100%" stop-color="#d0d0d0"/>
+    </radialGradient>
+  </defs>
+  <!-- Top half (dusk navy) -->
+  <path d="M 32 4 A 28 28 0 0 1 60 32 L 36 32 A 4 4 0 0 0 32 28 Z" fill="url(#topHalf)"/>
+  <!-- Bottom half (white) -->
+  <path d="M 60 32 A 28 28 0 0 1 32 60 L 32 36 A 4 4 0 0 0 36 32 Z" fill="url(#bottomHalf)"/>
+  <!-- Bottom half left -->
+  <path d="M 32 60 A 28 28 0 0 1 4 32 L 28 32 A 4 4 0 0 0 32 36 Z" fill="url(#bottomHalf)"/>
+  <!-- Top half left -->
+  <path d="M 4 32 A 28 28 0 0 1 32 4 L 32 28 A 4 4 0 0 0 28 32 Z" fill="url(#topHalf)"/>
+  <!-- Horizontal band -->
+  <rect x="4" y="29" width="56" height="6" fill="#1a1a2e"/>
+  <!-- Center button outer ring -->
+  <circle cx="32" cy="32" r="10" fill="#1a1a2e"/>
+  <!-- Center button -->
+  <circle cx="32" cy="32" r="7" fill="url(#centerBtn)"/>
+  <!-- Center button highlight -->
+  <circle cx="30" cy="30" r="2.5" fill="rgba(255,255,255,0.8)"/>
+  <!-- Outer ring -->
+  <circle cx="32" cy="32" r="28" fill="none" stroke="#1a1a2e" stroke-width="2"/>
+  <!-- Top highlight -->
+  <ellipse cx="24" cy="14" rx="10" ry="5" fill="rgba(255,255,255,0.15)" transform="rotate(-25 24 14)"/>
+</svg>

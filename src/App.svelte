@@ -13,6 +13,7 @@
   import LoadingView from './components/LoadingView.svelte';
   import ErrorView from './components/ErrorView.svelte';
   import headerBackground from './assets/headerbackground.png';
+  import duskballIcon from '/duskball.svg';
 
   type GameState = 'loading' | 'quiz' | 'result' | 'collection' | 'error';
 
@@ -279,9 +280,12 @@
 <div class="app">
   <header class="app-header" style="background-image: url({headerBackground}); background-size: cover; background-position: top center; background-repeat: no-repeat;">
     <div class="header-content">
-      <div>
-        <h1 class="app-title">{t.appTitle}</h1>
-        <p class="app-tagline">{t.appTagline}</p>
+      <div class="header-brand">
+        <img src={duskballIcon} alt="Duskball" class="header-logo" />
+        <div>
+          <h1 class="app-title">{t.appTitle}</h1>
+          <p class="app-tagline">{t.appTagline}</p>
+        </div>
       </div>
       <nav>
       <button
@@ -408,6 +412,25 @@
     justify-content: space-between;
     align-items: center;
     gap: var(--spacing-6);
+  }
+
+  .header-brand {
+    display: flex;
+    align-items: center;
+    gap: var(--spacing-3);
+  }
+
+  .header-logo {
+    width: 48px;
+    height: 48px;
+    flex-shrink: 0;
+    filter: drop-shadow(2px 2px 4px rgba(0, 0, 0, 0.3));
+    animation: logoSpin 6s ease-in-out infinite;
+  }
+
+  @keyframes logoSpin {
+    0%, 100% { transform: rotate(0deg); }
+    50% { transform: rotate(180deg); }
   }
 
   .header-content > div:first-child {

@@ -1,12 +1,12 @@
-# cardCrun.ch
+# Duskball
 
-**Live at: [cardcrun.ch](https://cardcrun.ch)**
+**Live at: [duskball.com](https://duskball.com)**
 
 A math learning game where kids collect Pokémon cards by solving math problems. Master arithmetic skills while building your collection from over 16,000 real Pokémon TCG cards.
 
 ## About
 
-cardCrun.ch combines education with the excitement of collecting Pokémon cards. Players solve math problems appropriate for their grade level (1-7) and earn cards based on their performance. Collect enough HP to unlock rare gold cards and build an impressive collection.
+Duskball combines education with the excitement of collecting Pokémon cards. Players solve math problems appropriate for their grade level (1-7) and earn cards based on their performance. Collect enough HP to unlock rare gold cards and build an impressive collection.
 
 ## Features
 

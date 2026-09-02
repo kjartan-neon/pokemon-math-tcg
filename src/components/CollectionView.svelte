@@ -278,7 +278,7 @@
         style="display: none;"
       />
     </div>
-    <p style="background-color: white; padding: 8px;">This website is not produced, endorsed, supported, or affiliated with Nintendo or The Pokémon Company. Data from https://tcgdex.dev/. Pokémon and all elements of the Pokémon franchise are © 1995-2025 Nintendo, GAME FREAK inc. TM © and Creatures Inc.</p> <p style="background-color: white; padding: 8px;">Our website uses cookies in the form of local storage for functionality purposes only. These cookies are necessary to save your progress in the game while you are playing and for the next time you want to play. You can choose to block or delete cookies in your browser, but this will affect the functionality of our website. We do not transmit any other user data. The website code is delivered to your computer by servers at netlify.com.</p>
+    <p style="background-color: white; padding: 8px;">This website is not produced, endorsed, supported, or affiliated with Nintendo or The Pokémon Company. Data from https://tcgdex.dev/. Pokémon and all elements of the Pokémon franchise are © 1995-2025 Nintendo, GAME FREAK inc. TM © and Creatures Inc.</p> <p style="background-color: white; padding: 8px;">Our website uses cookies in the form of local storage for functionality purposes only. These cookies are necessary to save your progress in the game while you are playing and for the next time you want to play. You can choose to block or delete cookies in your browser, but this will affect the functionality of our website. We do not transmit any other user data. The website code is delivered to your computer by servers at duskball.com.</p>
   </div>
 
   {#if message}

@@ -49,7 +49,7 @@ export interface Translations {
 
 export const translations: Record<Language, Translations> = {
   en: {
-    appTitle: 'cardCrun.ch',
+    appTitle: 'Duskball',
     appTagline: 'Crunch Numbers. Collect Cards.',
     quizTitle: 'TCG Math Challenge',
     playQuiz: 'Play Quiz',
@@ -95,7 +95,7 @@ export const translations: Record<Language, Translations> = {
     mathQuestion: (num1: number, num2: number, operator: '+' | '-') => `What is ${num1} ${operator} ${num2}?`,
   },
   no: {
-    appTitle: 'cardCrun.ch',
+    appTitle: 'Duskball',
     appTagline: 'Crunch Numbers. Collect Cards.',
     quizTitle: 'TCG Matte Utfordring',
     playQuiz: 'Spill Quiz',
