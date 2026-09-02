@@ -421,8 +421,8 @@
   }
 
   .header-logo {
-    width: 48px;
-    height: 48px;
+    width: 32px;
+    height: 32px;
     flex-shrink: 0;
     filter: drop-shadow(2px 2px 4px rgba(0, 0, 0, 0.3));
     animation: logoSpin 6s ease-in-out infinite;
