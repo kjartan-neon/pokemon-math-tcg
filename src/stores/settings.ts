@@ -10,6 +10,9 @@ export const availableSets: CardSet[] = [
   { id: 'swsh3', name: 'Sword & Shield - Darkness Ablaze' },
   { id: 'sv05', name: 'Scarlet & Violet - Temporal Forces' },
   { id: 'sv06.5', name: 'Scarlet & Violet - Shrouded Fable' },
+  { id: 'me03', name: 'Mega Evolution - Perfect Order' },
+  { id: 'me04', name: 'Mega Evolution - Chaos Rising' },
+  { id: 'me05', name: 'Mega Evolution - Pitch Black' },
 ];
 
 const SETTINGS_KEY = 'tcg-math-settings';
